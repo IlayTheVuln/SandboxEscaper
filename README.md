@@ -1,27 +1,10 @@
 # SandboxEscaper
-A sandbox ecapare i wrote in cs!
-2 files:
-ststic class that holds data of othet antimalware programs(AntiMalwareDataBase)
-static class that uses this database and preform the checks(SandBoxEscaper)
-the sandbox escaper is a static class that contains a database of many known AV, EDR, WinDefender resources.
-the edrs,avs it is checking are:
-Eset
-BitDefender
-VGA
-Norton
-Sophos
-TrendMicro
-Avast
-McAffee
+The sandbox escaper is a powerful tool that I have developed in C#. It consists of two files: a static class that holds data of other antimalware programs (AntiMalwareDataBase) and a static class that uses this database and performs the checks (SandBoxEscaper).
 
-!!feel free to add more rendors by sending me an email:ilaysam00@gmail.com
-and ill add them in the "AntiMalwareDataBase"!!
+SandBoxEscaper is specifically designed to detect the presence of a sandbox environment that is often used to test malware. To achieve this, the tool performs various checks in a particular order. Firstly, it checks for VM resources by searching for known names of files that are typically used to create a virtual machine (VM) for testing malware.
 
+Next, SandBoxEscaper performs a check on processes and services by searching for known names of those that are typically used in a sandbox environment. It also checks for a VM's BIOS ID, as VMs usually use an obfuscated BIOS ID that is distinct from a real computer's. Finally, the tool checks the manufacturer of the "PC" to see if it is identified with known sandbox conventions.
 
-it is prefoeming theses checks in order to test for suspicious runtime environment:
+SandBoxEscaper's AntiMalwareDataBase is a database of many known antivirus, endpoint detection and response (EDR), and Windows Defender resources. The currently supported antivirus and EDR resources that it checks are: Eset, BitDefender, VGA, Norton, Sophos, TrendMicro, Avast, and McAfee. If there are any other vendors that users want to add, they can send an email to ilaysam00@gmail.com and I will add them to the AntiMalwareDataBase.
 
-1. vm resources=>checks for known names of files that are used for creating a vm to test the malware
-2.processes and services=>checks for known names of 
-3.BiosId=>vm's usually uses a new massive and obfussicated biosid so the sandbox escaper checks taht
-4.Manufactorer=>check weathet the manufactorer of the "pc" is identified with known sandbox conventions
-
+In summary, SandBoxEscaper is a highly efficient tool that can detect the presence of sandbox environments that are often used to test malware. Its AntiMalwareDataBase, containing a comprehensive list of antivirus, EDR, and Windows Defender resources, makes it one of the most reliable tools for detecting and bypassing sandbox environment
